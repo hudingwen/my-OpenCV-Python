@@ -14,7 +14,7 @@ import sys
 # img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b8.jpg" )  
 # img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b9.jpg" )  
 # img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b10.jpg" )
-img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b11.jpg" )
+img = cv2.imread("./pic\\mxd\\test\\sample\\b3.jpg" )
 # img = cv2.imread("D:\\hudingwen\\github\\TestKeyBoard\\TestKeyboard\\bin\\x64\Debug\\pics\\20230311224516.jpg" )
 # sample = sys.argv[1] 
 # sample2 = "{}".format(sample) 
@@ -59,15 +59,21 @@ for i in range(len(contours)):
     rect = cv2.minAreaRect(contours[i]) #提取矩形坐标  
     box = cv2.boxPoints(rect)  
     box = np.int32(box)  
-    angle =abs(abs(rect[2])-45)  
-    length = max(rect[1])  
-    width = min(rect[1])  
-
-
     width = max(box, key=lambda x: x[0])[0] - min(box, key=lambda x: x[0])[0]
     height = max(box, key=lambda x: x[1])[1] - min(box, key=lambda x: x[1])[1]
-    cv2.drawContours(img, [box], 0, (0, 0, 255), 2)  
-    box_ji.append(box)  
+
+    
+    print("{}-{}".format(width,height))
+    if width == 201 and height == 49:
+    #     continue
+    # if height < 45 or height > 55:
+    #     continue
+        cv2.drawContours(img, [box], 0, (0, 0, 255), 2)  
+        box_ji.append(box)  
+        print("找到了")
+
+
+
 cv2.imshow("Keypoints", img)
 cv2.waitKey(0)
     

@@ -16,8 +16,8 @@ import sys
 # img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b10.jpg" )
 # img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b11.jpg" )
 # img = cv2.imread("D:\\hudingwen\\github\\TestKeyBoard\\TestKeyboard\\bin\\x64\Debug\\pics\\20230311224520.jpg" )
-img = cv2.imread("D:\\hudingwen\\github\\TestKeyBoard\\TestKeyboard\\bin\\x64\Debug\\pics\\20230311224108.jpg" )
-
+# img = cv2.imread("D:\\hudingwen\\github\\TestKeyBoard\\TestKeyboard\\bin\\x64\Debug\\pics\\20230311224108.jpg" )
+img = cv2.imread("./pic\\mxd\\test\\sample\\b10.jpg" )
 # sample = sys.argv[1] 
 # sample2 = "{}".format(sample) 
 # img = cv2.imread(sample2)  

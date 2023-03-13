@@ -27,7 +27,8 @@ img = cv2.imread("./pic/fushi2.png")
 kernal = cv2.getStructuringElement(cv2.MORPH_RECT,(3,3))
 dst = cv2.morphologyEx(img,cv2.MORPH_BLACKHAT,kernal)
 
-
+# 顶帽变换用于凸显暗背景上的亮物体。（也可叫白帽）
+# 底帽变换用于凸显亮背景上的暗物体。（也可叫黑帽）
 
 cv2.imshow("img",img) 
 cv2.imshow("dst",dst)
