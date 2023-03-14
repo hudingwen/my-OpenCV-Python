@@ -14,23 +14,23 @@ import sys
 # img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b8.jpg" )  
 # img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b9.jpg" )  
 # img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b10.jpg" )
-# sample = sys.argv[1] 
-# sample2 = "{}".format(sample) 
-# img = cv2.imread(sample2)  
+sample = sys.argv[1] 
+sample2 = "{}".format(sample) 
+img = cv2.imread(sample2)  
 
 
 tempFlag = 1
 
 countFind = 0
 countNoFind = 0
-pid = 0
-while pid < 59:
-# pid = tempFlag - 1
-# while pid < tempFlag:
+# pid = 0
+# while pid < 59:
+pid = tempFlag - 1
+while pid < tempFlag:
     fileId = pid + 1
     # 下一个
     pid+=1
-    img = cv2.imread("./pic\\mxd\\test\\sample\\b{}.jpg".format(fileId))
+    # img = cv2.imread("./pic\\mxd\\test\\sample\\b{}.jpg".format(fileId))
     isFind = False
 
     # arr = [1,10,30,60,90,95,100,105,110,115,120,150,180,210,240,254]
@@ -69,7 +69,7 @@ while pid < 59:
         #寻找轮廓  
         
         contours, hierarchy = cv2.findContours(dilate,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)  
-
+    
         #根据轮廓绘制矩形  
         
         for i in range(len(contours)):  
@@ -89,9 +89,9 @@ while pid < 59:
             
             # print("{}-{}".format(width,height))
             if (width == 201) and (height == 49) and box[0][1] == box[1][1] and box[2][1] == box[3][1]:
-                cv2.drawContours(img, [box], 0, (0, 0, 255), 2)  
+                # cv2.drawContours(img, [box], 0, (0, 0, 255), 2)  
                 isFind = True 
-                print("{}找到了(小框):".format(fileId))
+                # print("{}找到了(小框):".format(fileId))
                 print("{'success':true,'msg':'图像识别成功(小框)'}")
                 # if(fileId == 22):
                 # if(True):
@@ -99,12 +99,12 @@ while pid < 59:
                 #     cv2.imshow("img",img) 
                 #     cv2.waitKey()
                 countFind+=1
-                print("{}-{}".format(width,height))
+                # print("{}-{}".format(width,height))
                 break
             if (width == 239) and (height == 218) and box[0][1] == box[1][1] and box[2][1] == box[3][1]:
-                cv2.drawContours(img, [box], 0, (0, 0, 255), 2)  
+                # cv2.drawContours(img, [box], 0, (0, 0, 255), 2)  
                 isFind = True 
-                print("{}找到了(大框):".format(fileId))
+                # print("{}找到了(大框):".format(fileId))
                 print("{'success':true,'msg':'图像识别成功(大框)'}")
                 # if(fileId == 22):
                 # if(True):
@@ -112,7 +112,7 @@ while pid < 59:
                 #     cv2.imshow("img",img) 
                 #     cv2.waitKey()
                 countFind+=1
-                print("{}-{}".format(width,height))
+                # print("{}-{}".format(width,height))
                 break
         if isFind == True:
             break
@@ -123,13 +123,13 @@ while pid < 59:
         #     cv2.imshow("img",img) 
         #     cv2.waitKey()
     if(isFind == False):
-        print("{}没有找到".format(fileId))
+        # print("{}没有找到".format(fileId))
         print("{'success':false,'msg':'未找到识别特征'}")
         countNoFind+=1
-success = countFind/(countFind+countNoFind)*100
-print("成功:{},失败:{}".format(countFind,countNoFind))
-percentage = (countFind / (countNoFind+countFind)) * 100
-print(f"成功比例:{percentage:.2f}%")
+# success = countFind/(countFind+countNoFind)*100
+# print("成功:{},失败:{}".format(countFind,countNoFind))
+# percentage = (countFind / (countNoFind+countFind)) * 100
+# print(f"成功比例:{percentage:.2f}%")
 # cv2.imshow("img",img) 
 cv2.waitKey()
 cv2.destroyAllWindows()
