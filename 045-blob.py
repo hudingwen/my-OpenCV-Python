@@ -74,7 +74,7 @@ for i in range(len(contours)):
         continue
     # print(width)
     # print(height)
-    print("{'success':true,'msg':'图像识别成功'}")
+    print("{'success':true,'msg':'图像识别成功'}", end="")
     cv2.drawContours(img, [box], 0, (0, 0, 255), 2)  
     # box_ji.append(box)  
     # cv2.imshow("Keypoints", img)
@@ -82,7 +82,7 @@ for i in range(len(contours)):
     exit()
     break
     
-print("{'success':false,'msg':'图像识别失败'}")
+print("{'success':false,'msg':'图像识别失败'}", end="")
 exit()
     
 

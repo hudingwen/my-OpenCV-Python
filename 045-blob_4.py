@@ -92,7 +92,7 @@ while pid < tempFlag:
                 # cv2.drawContours(img, [box], 0, (0, 0, 255), 2)  
                 isFind = True 
                 # print("{}找到了(小框):".format(fileId))
-                print("{'success':true,'msg':'图像识别成功(小框)'}")
+                print("{'success':true,'msg':'图像识别成功(小框)'}", end="")
                 # if(fileId == 22):
                 # if(True):
                 #     print("{}-{}".format(width,height))
@@ -105,7 +105,7 @@ while pid < tempFlag:
                 # cv2.drawContours(img, [box], 0, (0, 0, 255), 2)  
                 isFind = True 
                 # print("{}找到了(大框):".format(fileId))
-                print("{'success':true,'msg':'图像识别成功(大框)'}")
+                print("{'success':true,'msg':'图像识别成功(大框)'}", end="")
                 # if(fileId == 22):
                 # if(True):
                 #     print("{}-{}".format(width,height))
@@ -124,7 +124,7 @@ while pid < tempFlag:
         #     cv2.waitKey()
     if(isFind == False):
         # print("{}没有找到".format(fileId))
-        print("{'success':false,'msg':'未找到识别特征'}")
+        print("{'success':false,'msg':'未找到识别特征'}", end="")
         countNoFind+=1
 # success = countFind/(countFind+countNoFind)*100
 # print("成功:{},失败:{}".format(countFind,countNoFind))

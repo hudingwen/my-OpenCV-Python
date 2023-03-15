@@ -36,13 +36,14 @@ def match_pic(img_source, img_target):
     return circle_center_pos, top_left, right_bottom
 
 
+img_source = "D:\\hudingwen\\github\\TestKeyBoard\\TestKeyboard\\bin\\x64\\Debug\\pics\\20230315201936.jpg"
 # img_source = "./pic/mxd/test/sampleLun/20230315162142.png"
-img_source = "./pic/mxd/test/sample/20230311163110.jpg"
+# img_source = "./pic/mxd/test/sample/20230311163110.jpg"
 img_target = "./pic/mxd/test/lun.png"
 circle_center_pos, top_left, right_bottom = match_pic(img_source, img_target)
 circle_radius = 40
 color = (0, 0, 255)
-line_width = 5
+line_width = 1
 # draw circle
 imsrc = ac.imread(img_source)
 draw_box(imsrc, circle_center_pos, top_left, right_bottom, circle_radius, color, line_width)
