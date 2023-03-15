@@ -46,4 +46,3 @@ line_width = 5
 # draw circle
 imsrc = ac.imread(img_source)
 draw_box(imsrc, circle_center_pos, top_left, right_bottom, circle_radius, color, line_width)
-cv2.destroyAllWindows()
