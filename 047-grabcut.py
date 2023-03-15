@@ -14,7 +14,7 @@ class App:
         elif event == cv2.EVENT_LBUTTONUP:
             self.flag = False
             cv2.rectangle(self.img,(self.startX,self.startY),(x,y),(0,0,255),3)
-            self.rect(min(self.startX,x),min(self.startY,y),abs(self.startX-x),abs(self.startY-y))
+            self.rect = (min(self.startX,x),min(self.startY,y),abs(self.startX-x),abs(self.startY-y))
             print("EVENT_LBUTTONUP")
         elif event == cv2.EVENT_MOUSEMOVE:
             if self.flag == True:
