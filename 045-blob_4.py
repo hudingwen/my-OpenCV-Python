@@ -1,3 +1,4 @@
+#coding=utf-8
 # 导入库
 import cv2
 import numpy as np
@@ -15,10 +16,10 @@ import sys
 # img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b9.jpg" )  
 # img = cv2.imread("D:\\hudingwen\\github\\my-OpenCV-Python\\pic\\mxd\\test\\sample\\b10.jpg" )
 sample = sys.argv[1] 
-sample2 = "{}".format(sample) 
-img = cv2.imread(sample2)  
-
-
+sample2 = r"{}".format(sample)
+# img = cv2.imread(sample2)  
+# img = cv2.imread(sample2)  
+img = cv2.imdecode(np.fromfile(sample,dtype=np.uint8),-1)
 tempFlag = 1
 
 countFind = 0
@@ -131,5 +132,4 @@ while pid < tempFlag:
 # percentage = (countFind / (countNoFind+countFind)) * 100
 # print(f"成功比例:{percentage:.2f}%")
 # cv2.imshow("img",img) 
-cv2.waitKey()
 cv2.destroyAllWindows()

@@ -1,3 +1,4 @@
+#coding=utf-8
 import aircv as ac
 import cv2
 import sys
@@ -24,8 +25,11 @@ def draw_box(img, pos, top_left, right_bottom, circle_radius,  color, line_width
 
 def match_pic(img_source, img_target):
     # 匹配
-    imsrc = ac.imread(img_source)
-    imobj = ac.imread(img_target)
+    # imsrc = ac.imread(r"{}".format(img_source))
+    # imobj = ac.imread(r"{}".format(img_target))
+    imsrc = cv2.imdecode(np.fromfile(img_source,dtype=np.uint8),-1)
+    imobj = cv2.imdecode(np.fromfile(img_target,dtype=np.uint8),-1)
+     
     pos = ac.find_template(imsrc, imobj, rgb=True, bgremove=True)
     if not pos:
         print("{'success':false,'msg':'未找到识别特征'}", end="")
